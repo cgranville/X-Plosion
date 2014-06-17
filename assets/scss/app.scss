@@ -45,18 +45,13 @@ body {
 #main-menu {
 	display: table;
 	text-align: justify;
-	text-justify:inter-word;
 	width: 100%;
 	border-radius:10px;
 	height:55px;
 	margin-top: 40px;
 }
 
-#main-menu:after {
-  content: '';
-  width: 100%; /* Ensures there are at least 2 lines of text, so justification works */
-  display: inline-block;
-}
+
 
 #main-menu a {
 	color:white;
@@ -74,60 +69,15 @@ body {
 #main-menu .button {
 	width:100%;
 	text-transform: uppercase;
-margin:0;
-	background: rgb(250,45,108); /* Old browsers */
-	background: -moz-linear-gradient(top,  rgba(250,45,108,1) 0%, rgba(230,16,82,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(250,45,108,1)), color-stop(100%,rgba(230,16,82,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  rgba(250,45,108,1) 0%,rgba(230,16,82,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  rgba(250,45,108,1) 0%,rgba(230,16,82,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  rgba(250,45,108,1) 0%,rgba(230,16,82,1) 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  rgba(250,45,108,1) 0%,rgba(230,16,82,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa2d6c', endColorstr='#e61052',GradientType=0 ); /* IE6-9 */
-
-}
-
-#main-menu > ul > li > ul {
-		display: none;
-	}
-
-#main-menu > ul > li:hover > ul {
-		display: block;
-		position: absolute;
-		z-index: 10;
-		margin-left: 0px;
-	}
-
-	#main-menu > ul > li > ul > li {
-
-		display: block;
-		
-	}
-
-	#main-menu > ul > li > ul > li .button {
-		margin:0;
-		display: block;
-		text-align: left;
-	}
-
-#main-menu .button:hover {
-	background: rgb(81,66,43); /* Old browsers */
-	background: -moz-linear-gradient(top,  rgba(81,66,43,1) 0%, rgba(42,31,15,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(81,66,43,1)), color-stop(100%,rgba(42,31,15,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  rgba(81,66,43,1) 0%,rgba(42,31,15,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  rgba(81,66,43,1) 0%,rgba(42,31,15,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  rgba(81,66,43,1) 0%,rgba(42,31,15,1) 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  rgba(81,66,43,1) 0%,rgba(42,31,15,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#51422b', endColorstr='#2a1f0f',GradientType=0 ); /* IE6-9 */
-
 }
 
 #main-menu:after {
-	position: relative;
-	display: inline-block;
-	width: 100%;
-	height: 0;
-	line-height: 0;
-	content: '';
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    line-height: 0;
+    content: '';
 }
 
 #main-menu li:first-child .button {
@@ -143,19 +93,19 @@ margin:0;
 }
 
 #main-menu li:not(:first-child):not(:last-child) .button {
-	border-radius: 0px;
+border-radius: 0px;
 }
 
 #main-menu li:last-child .button {
-	-webkit-border-radius: 0px;
-	-webkit-border-top-right-radius: 10px;
-	-webkit-border-bottom-right-radius: 10px;
-	-moz-border-radius: 0px;
-	-moz-border-radius-topright: 10px;
-	-moz-border-radius-bottomright: 10px;
-	border-radius: 0px;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
+-webkit-border-radius: 0px;
+-webkit-border-top-right-radius: 10px;
+-webkit-border-bottom-right-radius: 10px;
+-moz-border-radius: 0px;
+-moz-border-radius-topright: 10px;
+-moz-border-radius-bottomright: 10px;
+border-radius: 0px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
 
 }
 
