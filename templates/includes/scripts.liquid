@@ -1,0 +1,7 @@
+{{ "jquery.js" | asset_url | script_tag }}
+{{ "/assets/js/foundation.js" | asset_url | script_tag }}
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular.min.js"></script>
+{{ "app.js" | asset_url | script_tag }}
+<script>
+$(document).foundation();
+</script>

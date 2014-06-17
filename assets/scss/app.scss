@@ -1,0 +1,116 @@
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// Global Foundation Settings
+@import "foundation/settings";
+
+// You can import only specific elements by adjusting the import below
+@import "foundation";
+
+body {
+	background: rgb(218,203,183); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(218,203,183,1) 0%, rgba(234,226,215,1) 200px, rgba(234,226,215,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(218,203,183,1)), color-stop(200px,rgba(234,226,215,1)), color-stop(100%,rgba(234,226,215,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(218,203,183,1) 0%,rgba(234,226,215,1) 200px,rgba(234,226,215,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(218,203,183,1) 0%,rgba(234,226,215,1) 200px,rgba(234,226,215,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(218,203,183,1) 0%,rgba(234,226,215,1) 200px,rgba(234,226,215,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(218,203,183,1) 0%,rgba(234,226,215,1) 200px,rgba(234,226,215,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dacbb7', endColorstr='#eae2d7',GradientType=0 ); /* IE6-9 */
+}
+
+
+// Header
+
+#header {
+	margin-top: 40px;
+}
+
+#search {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#search input {
+	width: auto !important;
+	display: inline-block;
+	margin-right: rem-calc(10px);
+	height: rem-calc(31px);
+}
+
+#search .button {
+	height: rem-calc(31px);
+	text-transform: uppercase;
+}
+
+#main-menu {
+	display: table;
+	text-align: justify;
+	width: 100%;
+	border-radius:10px;
+	height:55px;
+	margin-top: 40px;
+}
+
+
+
+#main-menu a {
+	color:white;
+}
+
+#main-menu ul {
+	display: table-row;
+}
+
+#main-menu li {
+	display: table-cell;
+	
+}
+
+#main-menu .button {
+	width:100%;
+	text-transform: uppercase;
+}
+
+#main-menu:after {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    line-height: 0;
+    content: '';
+}
+
+#main-menu li:first-child .button {
+	-webkit-border-radius: 10px;
+	-webkit-border-top-right-radius: 0px !important;
+	-webkit-border-bottom-right-radius: 0px !important;
+	-moz-border-radius: 10px;
+	-moz-border-radius-topright: 0px !important;
+	-moz-border-radius-bottomright: 0px !important;
+	border-radius: 10px;
+	border-top-right-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+}
+
+#main-menu li:not(:first-child):not(:last-child) .button {
+border-radius: 0px;
+}
+
+#main-menu li:last-child .button {
+-webkit-border-radius: 0px;
+-webkit-border-top-right-radius: 10px;
+-webkit-border-bottom-right-radius: 10px;
+-moz-border-radius: 0px;
+-moz-border-radius-topright: 10px;
+-moz-border-radius-bottomright: 10px;
+border-radius: 0px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+
+}
+
+// Helpers
+
+.pink-gradient {
+	
+}
