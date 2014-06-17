@@ -4931,10 +4931,17 @@ body {
 #main-menu {
   display: table;
   text-align: justify;
+  text-justify: inter-word;
   width: 100%;
   border-radius: 10px;
   height: 55px;
   margin-top: 40px; }
+
+#main-menu:after {
+  content: '';
+  width: 100%;
+  /* Ensures there are at least 2 lines of text, so justification works */
+  display: inline-block; }
 
 #main-menu a {
   color: white; }
@@ -4947,7 +4954,59 @@ body {
 
 #main-menu .button {
   width: 100%;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin: 0;
+  background: #fa2d6c;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #fa2d6c 0%, #e61052 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fa2d6c), color-stop(100%, #e61052));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #fa2d6c 0%, #e61052 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #fa2d6c 0%, #e61052 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #fa2d6c 0%, #e61052 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #fa2d6c 0%, #e61052 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa2d6c', endColorstr='#e61052',GradientType=0 );
+  /* IE6-9 */ }
+
+#main-menu > ul > li > ul {
+  display: none; }
+
+#main-menu > ul > li:hover > ul {
+  display: block;
+  position: absolute;
+  z-index: 10;
+  margin-left: 0px; }
+
+#main-menu > ul > li > ul > li {
+  display: block; }
+
+#main-menu > ul > li > ul > li .button {
+  margin: 0;
+  display: block;
+  text-align: left; }
+
+#main-menu .button:hover {
+  background: #51422b;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #51422b 0%, #2a1f0f 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #51422b), color-stop(100%, #2a1f0f));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #51422b 0%, #2a1f0f 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #51422b 0%, #2a1f0f 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #51422b 0%, #2a1f0f 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #51422b 0%, #2a1f0f 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#51422b', endColorstr='#2a1f0f',GradientType=0 );
+  /* IE6-9 */ }
 
 #main-menu:after {
   position: relative;
