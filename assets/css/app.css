@@ -6680,7 +6680,57 @@ body {
   -o-transform: translate(3px);
   -ms-transform: translate(3px); }
 
-/* line 566, C:\Users\Mythic\Documents\toptal-x-plosion\assets\scss\app.scss */
+/* line 562, C:\Users\Mythic\Documents\toptal-x-plosion\assets\scss\app.scss */
+#footer {
+  background: #c9bba9;
+  height: 90px;
+  margin-top: 40px;
+  box-shadow: inset 2px 2px 0px 0px rgba(0, 0, 0, 0.2); }
+
+/* line 569, C:\Users\Mythic\Documents\toptal-x-plosion\assets\scss\app.scss */
+#footer .row {
+  padding: 40px 0 15px; }
+
+/* line 573, C:\Users\Mythic\Documents\toptal-x-plosion\assets\scss\app.scss */
+#footer > .row > div {
+  font-size: 12px !important; }
+
+/* line 577, C:\Users\Mythic\Documents\toptal-x-plosion\assets\scss\app.scss */
+#footer-right {
+  float: right; }
+
+/* line 581, C:\Users\Mythic\Documents\toptal-x-plosion\assets\scss\app.scss */
+#footer-menu {
+  list-style: none;
+  text-align: right;
+  line-height: 12px !important;
+  font-size: 12px !important; }
+
+/* line 588, C:\Users\Mythic\Documents\toptal-x-plosion\assets\scss\app.scss */
+#footer-menu li {
+  font-size: 12px;
+  display: inline;
+  padding: 0 20px;
+  border-style: dotted;
+  border-width: 0;
+  border-right-width: 1px; }
+
+/* line 598, C:\Users\Mythic\Documents\toptal-x-plosion\assets\scss\app.scss */
+#footer-menu li:first-child {
+  border-style: dotted;
+  border-width: 0;
+  border-left-width: 1px;
+  border-right-width: 1px; }
+
+/* line 605, C:\Users\Mythic\Documents\toptal-x-plosion\assets\scss\app.scss */
+#footer-menu li a {
+  color: #97866f; }
+
+/* line 610, C:\Users\Mythic\Documents\toptal-x-plosion\assets\scss\app.scss */
+#footer-menu li a:hover {
+  text-decoration: underline; }
+
+/* line 616, C:\Users\Mythic\Documents\toptal-x-plosion\assets\scss\app.scss */
 .middle {
   position: relative;
   top: 50%;

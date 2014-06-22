@@ -8,39 +8,52 @@
 	{{ "foundation-icons.css" | asset_url | stylesheet_tag }}
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-{{ "/assets/css/flexslider.css" | asset_url | stylesheet_tag }}
+	{{ "/assets/css/flexslider.css" | asset_url | stylesheet_tag }}
 
 	<script src="{{ "modernizr.js" | asset_url }}"></script>
 </head>
 <body>
-<header>
-	<div id="header" class="row">
-		<div id="logo" class="large-4 columns"><img src="assets/images/xplosion-logo.png"></div>
-		<div id="banner" class="large-4 columns text-center"><img src="assets/images/banner.png"></div>
-		<div id="search" class="large-4 columns text-right">
-			<form class="inline">
-				<input type="search" class="radius" placeholder="Search X-Plosion" /><a href="#" class="button tiny radius">Search</a>
-			</form>
+	<header>
+		<div id="header" class="row">
+			<div id="logo" class="large-4 columns"><img src="assets/images/xplosion-logo.png"></div>
+			<div id="banner" class="large-4 columns text-center"><img src="assets/images/banner.png"></div>
+			<div id="search" class="large-4 columns text-right">
+				<form class="inline">
+					<input type="search" class="radius" placeholder="Search X-Plosion" /><a href="#" class="button tiny radius">Search</a>
+				</form>
+			</div>
 		</div>
-	</div>
-	<nav id="main-menu" class="row" role="navigation">
-		<ul>
-			<li><a href="#" class="button">Home</a></li>
-			<li><a href="#" class="button">Blog</a></li>
-			<li><a href="#" class="button">Our Products</a>
-				<ul>
-					<li><a href="#" class="button">X-Plosion</a></li>
-					<li><a href="#" class="button">Flavors</a></li>
-					<li><a href="#" class="button">Merchandise</a></li>
-				</ul>
-			</li>
-			<li><a href="#" class="button">About Us</a></li>
-			<li><a href="#" class="button">Where To Buy</a></li>
-			<li><a href="#" class="button">Contact Us</a></li>
-		</ul>
-	</nav>
-</header>
+		<nav id="main-menu" class="row" role="navigation">
+			<ul>
+				<li><a href="#" class="button">Home</a></li>
+				<li><a href="blog" class="button">Blog</a></li>
+				<li><a href="#" class="button">Our Products</a>
+					<ul>
+						<li><a href="#" class="button">X-Plosion</a></li>
+						<li><a href="#" class="button">Flavors</a></li>
+						<li><a href="#" class="button">Merchandise</a></li>
+					</ul>
+				</li>
+				<li><a href="#" class="button">About Us</a></li>
+				<li><a href="#" class="button">Where To Buy</a></li>
+				<li><a href="#" class="button">Contact Us</a></li>
+			</ul>
+		</nav>
+	</header>
 	{% block content %}{% endblock %}
 	{% include "scripts" %}
+	<section id="footer">
+		<div class="row">
+			<div id="footer-left" class="large-6 columns">&copy; 2014 X-Plosion Ltd.</div>
+			<div id="footer-right" class="large-6 columns">
+			<ul id="footer-menu">
+					<li><a href="#">FAQ</a></li>
+					<li><a href="#">Terms</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
 </body>
 </html>
