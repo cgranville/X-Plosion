@@ -20,19 +20,12 @@ h3 {
 h4 {
 	font-weight: bold;
 	font-size: rem-calc(13px);
-	color:#2a1f0f;
+	color:#97866f;
+	//padding-bottom: 0 !important;
 }
 
 body {
-	background: rgb(218,203,183); /* Old browsers */
-	background: -moz-linear-gradient(top,  rgba(218,203,183,1) 0%, rgba(234,226,215,1) 200px, rgba(234,226,215,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(218,203,183,1)), color-stop(200px,rgba(234,226,215,1)), color-stop(100%,rgba(234,226,215,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  rgba(218,203,183,1) 0%,rgba(234,226,215,1) 200px,rgba(234,226,215,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  rgba(218,203,183,1) 0%,rgba(234,226,215,1) 200px,rgba(234,226,215,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  rgba(218,203,183,1) 0%,rgba(234,226,215,1) 200px,rgba(234,226,215,1) 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  rgba(218,203,183,1) 0%,rgba(234,226,215,1) 200px,rgba(234,226,215,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dacbb7', endColorstr='#eae2d7',GradientType=0 ); /* IE6-9 */
-	height:auto;
+	background: #eae2d7 url("/assets/images/bg.png") repeat-x;
 }
 
 
@@ -112,6 +105,8 @@ max-width:970px
 
 #main-menu a {
 	color:white;
+	padding-left: 0;
+	padding-right: 0;
 
   text-shadow: 0.5px 0.866px 0px rgba( 0, 0, 0, .2 );
 -webkit-font-smoothing: antialiased !important;
@@ -389,10 +384,46 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8e7654', end
 
 .box h3 {
 	padding: rem-calc(20px);
-	padding-bottom: 10px;
+	//padding-bottom: 10px;
 	margin:0;
 
 }
+
+
+article h3 {
+	padding-bottom: 10px;
+}
+
+article p {
+	line-height: 20px;
+
+}
+
+#article-map {
+	float:right;
+	margin: 20px;
+	margin-bottom: 50px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb( 234, 225, 212 );
+  //-webkit-box-shadow: inset 0px 0px 0px 3px rgba(255, 255, 255, 0.75);
+//-moz-box-shadow:    inset 0px 0px 0px 3px rgba(255, 255, 255, 0.75);
+//box-shadow:         inset 0px 0px 0px 3px rgba(255, 255, 255, 0.75);
+//overflow-x: hidden;
+}
+
+.featured {
+	padding:20px 20px 0 20px;
+}
+
+.map {
+	margin: 3px 3px 2px 3px;
+	 border-style: solid;
+  border-width: 3px;
+  border-color: rgb( 255,255,255 );
+}
+
+
 
 .box h4 {
 	padding: rem-calc(20px);
@@ -458,6 +489,7 @@ border-right-width: 0px;
 border-top-left-radius: 10px;
 border-top-right-radius: 10px;
 border-width: 0;
+border: none;
 }
 .row.box > .columns > header {
 	border-style: dotted;
@@ -477,13 +509,15 @@ border-width: 0;
 	border-right-width: 1px;
 	border-collapse: collapse;
 	border-color: #eae2d7;
+	//border: none;
 }
 
 .row.box > .columns > div:last-child {
 	padding-bottom:rem-calc(20px);
 }
 
-.row.box > .columns > div:only-child {
+.row.box > .columns:only-child > div {
+	border: none;
 	border-width: 0;
 }
 
@@ -513,7 +547,7 @@ border-width: 0;
 
 
 .box p {
-	padding: rem-calc(20px) 0 0 rem-calc(20px);
+	padding: rem-calc(20px) rem-calc(10px) 0 rem-calc(20px);
 	font-size: rem-calc(12px);
 	color: #97866f;
 	margin:0;
@@ -533,13 +567,17 @@ border-width: 0;
 
 .social {
 	display: inline-block;
-	padding-left: 20px;
+	padding-left: 7px;
+}
+
+.social:first-of-type {
+	padding-left: 20px !important;
 }
 
 
 .social p {
 	display: inline-block;
-	padding-left: 5px;
+	padding-left: 7px;
 }
 
 .social a {
@@ -611,6 +649,29 @@ border-width: 0;
 -ms-transform: translate(3px);	
 }
 
+.content > h4 {
+	padding-bottom: 0;
+}
+
+#comments {
+	margin: 40px 20px;
+}
+
+#comment-header {
+	font-size: 18px;
+	padding: 20px 0;
+	text-transform: uppercase;
+	color: #e61052;
+	font-weight: bold;
+}
+
+.comment-user-pic {
+	width: 55px;
+	height: 55px;
+	background-color: black;
+	display: inline-block;
+}
+
 #footer {
 	background: #c9bba9;
 	height: 90px;
@@ -671,4 +732,28 @@ border-width: 0;
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
+}
+
+.arrow-box {
+	position: relative;
+	display: inline;
+	background: #b9a995;
+	padding: 20px;
+	border-radius: 10px;
+	border-color: #b9a995;
+}
+.arrow-box:after {
+	right: 99.9%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(185, 169, 149, 0);
+	border-right-color: #b9a995;
+	border-width: 10px;
+	margin-top: -10px;
 }
