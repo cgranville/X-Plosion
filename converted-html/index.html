@@ -52,7 +52,7 @@ $(document).foundation();
 		<nav id="main-menu" class="row" role="navigation">
 			<ul>
 				<li><a href="#" class="button">Home</a></li>
-				<li><a href="blog" class="button">Blog</a></li>
+				<li><a href="blog-single" class="button">Blog</a></li>
 				<li><a href="#" class="button">Our Products</a>
 					<ul>
 						<li><a href="#" class="button">X-Plosion</a></li>
@@ -67,7 +67,7 @@ $(document).foundation();
 		</nav>
 	</header>
 	<div class="row">
-		<div class="large-8 columns">
+	<div class="large-8 columns" ng-controller="BlogController as blog">
 			 
 <div class="row">
   <div class="large-12 columns">
@@ -96,19 +96,10 @@ $(document).foundation();
     <div class="row box">
       <div class="large-6 columns">
         <header class="dark"><h3>X-Plosion Products</h3></header>
-        <div>
-          <h4>We say NO to artificial flavors</h4>
+        <div ng-repeat="post in blog.posts | filter:'Products'| orderBy:'-published' | limitTo : 2 ">
+          <h4>{{post.name}}</h4>
           <div class="row">
-            <div class="large-6 columns excerpt"><img src="assets/images/xplosion-bottle-thumb.png"></div>
-            <div class="large-6 columns description"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-              <div class="more"><a href="#">More <i class="fa fa-sign-out"></i></a></div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h4>New flavors added</h4>
-          <div class="row">
-            <div class="large-6 columns excerpt"><img src="assets/images/flavor-bottle-thumb.png"></div>
+            <div class="large-6 columns excerpt"><img ng-src="{{post.thumb}}"></div>
             <div class="large-6 columns description"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
               <div class="more"><a href="#">More <i class="fa fa-sign-out"></i></a></div>
             </div>
@@ -117,19 +108,10 @@ $(document).foundation();
       </div>
       <div class="large-6 columns">
         <header class="dark"><h3>X-Plosion Expansion</h3></header>
-        <div>
-          <h4>X-Plosion is a hit in Japan</h4>
+        <div ng-repeat="post in blog.posts | filter:'Expansion' | orderBy:'-published' | limitTo : 2">
+          <h4>{{post.name}}</h4>
           <div class="row">
-            <div class="large-6 columns excerpt"><img src="assets/images/japan-bottle-thumb.png"></div>
-            <div class="large-6 columns description"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-              <div class="more"><a href="#">More <i class="fa fa-sign-out"></i></a></div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h4>Danish elder hooked on X-Plosion</h4>
-          <div class="row">
-            <div class="large-6 columns excerpt"><img src="assets/images/danish-businessman-thumb.png"></div>
+            <div class="large-6 columns excerpt"><img ng-src="{{post.thumb}}"></div>
             <div class="large-6 columns description"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
               <div class="more"><a href="#">More <i class="fa fa-sign-out"></i></a></div>
             </div>
@@ -151,7 +133,7 @@ $(document).foundation();
 
   <div id="recent" class="box" ng-controller="BlogController as blog">
     <header><h3>Randomly Selected</h3></header>
-    <p ng-repeat="post in blog.posts"><i class="fa fa-sign-out"></i> <a href="#">{{post.name}}</a></p>
+    <p ng-repeat="post in blog.posts | limitTo : 5"><i class="fa fa-sign-out"></i> <a ng-click="blog.loadPost(5)">{{post.name}}</a></p>
 
   </div>
 
@@ -176,6 +158,6 @@ $(document).foundation();
    </div>
  </div>
 </section>
-		
+
 	</body>
 	</html>
