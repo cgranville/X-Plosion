@@ -4,8 +4,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Foundation 5</title>
-  		<link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" media="all" />
-  		<script src="/assets/js/vendor/modernizr.min.js"></script>
+  		<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" media="all" />
+  		<script src="assets/js/vendor/modernizr.min.js"></script>
 	</head>
 	<body>
 		 
@@ -151,29 +151,20 @@
       </div>
     </div>
 
-  		<script src="/assets/js/vendor/jquery.min.js"></script>
-<script src="/assets/js/jquery.flexslider.min.js"></script>
-<script src="/assets/js/foundation.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular.min.js"></script>
-<script src="/assets/js/app.min.js"></script>
+  		<script src="assets/js/angular.js"></script>
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/jquery.flexslider.min.js"></script>
+<script src="assets/js/foundation.min.js"></script>
+
+<!--[if lte IE 7]>
+        <script src="assets/js/json3.js"></script>
+      <![endif]-->
+<script src="assets/js/app.min.js"></script>
 <script>
 $(document).foundation();
 </script>
 
-<script type="text/javascript" charset="utf-8">
-  $(window).load(function() {
-    $('.flexslider').flexslider({
-    	useCSS: true,
-    	//selector: ".slides > li",
-    	controlNav: "thumbnails",
-    	slideshow: false,
-    	//directionNav: true,
-    	prevText: "",
-    	nextText: "",
-    	controlsContainer: "#sliderControls"
-    });
-  });
-</script>
+
 
 	</body>
 </html>

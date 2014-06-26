@@ -6164,7 +6164,7 @@ h4 {
 
 /* line 27, C:\Users\Mythic\Documents\toptal-x-plosion\assets\scss\app.scss */
 body {
-  background: #eae2d7 url("/assets/images/bg.png") repeat-x; }
+  background: #eae2d7 url("../images/bg.png") repeat-x; }
 
 /* line 36, C:\Users\Mythic\Documents\toptal-x-plosion\assets\scss\app.scss */
 #header {

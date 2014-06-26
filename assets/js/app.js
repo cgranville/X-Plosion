@@ -30,11 +30,15 @@
 	});
 
 	app.controller('BlogController', function(){
+		this.currentPage = 'home.html';
 		this.currentPost = 0;
 		this.posts = articles;		
-		this.loadPost = function(postId){
+		this.loadPost = function(postId, page){
 			this.currentPost = postId;
-			//console.log(currentPost);
+			this.currentPage = page;
+		};
+		this.selectPage = function(setPage) {
+			this.currentPage = setPage;
 		};
 
 	});

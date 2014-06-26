@@ -1,35 +1,53 @@
 <!doctype html>
-<html class="no-js" lang="en" ng-app="xplosion-site">
+<html class="no-js" lang="en" id="ng-app" data-ng-app="xplosion-site">
 <head>
+ <!--[if lte IE 8]>
+        <script>
+          document.createElement('ng-include');
+          document.createElement('ng-pluralize');
+          document.createElement('ng-view');
+
+          // Optionally these for CSS
+          document.createElement('ng:include');
+          document.createElement('ng:pluralize');
+          document.createElement('ng:view');
+        </script>
+      <![endif]-->
+      <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+  <script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+  <script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+<![endif]-->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>X-PLOSION | Soda That Pops, Flavors That Explode</title>
 	{{ "app.css" | asset_url | stylesheet_tag }}
 	{{ "foundation-icons.css" | asset_url | stylesheet_tag }}
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	
+	{{ "font-awesome.css" | asset_url | stylesheet_tag}}
+	{{ "flexslider.css" | asset_url | stylesheet_tag }}
 
-	{{ "/assets/css/flexslider.css" | asset_url | stylesheet_tag }}
-
-	<script src="{{ "modernizr.js" | asset_url }}"></script>
+	{{ "modernizr.js" | asset_url | script_tag }}
 	{% include "scripts" %}
 
 
 </head>
-<body ng-controller="PageController as page" >
+<body data-ng-controller="BlogController as blog">
 	<header>
 		<div id="header" class="row">
-			<div id="logo" class="large-4 columns"><img src="assets/images/xplosion-logo.png"></div>
-			<div id="banner" class="large-4 columns text-center"><img src="assets/images/banner.png"></div>
+			<div id="logo" class="large-4 columns"><img src="assets/images/xplosion-logo.png" alt="logo"></div>
+			<div id="banner" class="large-4 columns text-center"><img src="assets/images/banner.png" alt="banner"></div>
 			<div id="search" class="large-4 columns text-right">
 				<form class="inline">
-					<input type="search" class="radius" placeholder="Search X-Plosion..." /><a href="#" class="button tiny radius">Search</a>
+					<input type="search" class="radius" placeholder="Search X-Plosion..." value="Search X-Plosion..."><a href="#" class="button tiny radius">Search</a>
 				</form>
 			</div>
 		</div>
 		<nav id="main-menu" class="row" role="navigation">
 			<ul>
-				<li ng-class="{ active:page.isSelected('home.html')}"><a href ng-click="page.selectPage('home.html')" class="button">Home</a></li>
-				<li ng-class="{ active:page.isSelected('blog-single.html')}"><a href ng-click="page.selectPage('blog-single.html')" class="button">Blog</a></li>
+				<li data-ng-class="{ active:page.isSelected('home.html')}"><a data-ng-click="blog.selectPage('home.html')" class="button">Home</a></li>
+				<li data-ng-class="{ active:page.isSelected('blog.html')}"><a data-ng-click="blog.selectPage('blog.html')" class="button">Blog</a></li>
 				<li><a href="#" class="button">Our Products</a>
 					<ul>
 						<li><a href="#" class="button">X-Plosion</a></li>
@@ -43,13 +61,12 @@
 			</ul>
 		</nav>
 	</header>
-	<div class="row" ng-controller="BlogController as blog">
-		<section ng-include="page.currentPage" class="large-8 columns">
+	<div class="row">
+		<section data-ng-include="blog.currentPage" class="large-8 columns">
 			Stuff{% comment %}{% block content %}{% endblock %}{% endcomment %}
 		</section>
 		{% include "sidebar" %}
 	</div>
 	{% include "footer" %}
-
 </body>
 </html>

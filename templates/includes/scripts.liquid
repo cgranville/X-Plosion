@@ -1,7 +1,11 @@
+<script src="assets/js/angular.js"></script>
 {{ "jquery.js" | asset_url | script_tag }}
 {{ "jquery.flexslider.js" | asset_url | script_tag }}
 {{ "foundation.js" | asset_url | script_tag }}
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular.min.js"></script>
+{% comment %}{{ "angular.js" | asset_url | script_tag}}{% endcomment %}
+<!--[if lte IE 7]>
+        <script src="/assets/js/json3.js"></script>
+      <![endif]-->
 {{ "app.js" | asset_url | script_tag }}
 <script>
 $(document).foundation();
