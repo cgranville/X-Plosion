@@ -15,7 +15,7 @@
 
 
 </head>
-<body>
+<body ng-controller="PageController as page" >
 	<header>
 		<div id="header" class="row">
 			<div id="logo" class="large-4 columns"><img src="assets/images/xplosion-logo.png"></div>
@@ -28,8 +28,8 @@
 		</div>
 		<nav id="main-menu" class="row" role="navigation">
 			<ul>
-				<li><a href="#" class="button">Home</a></li>
-				<li><a href="blog-single" class="button">Blog</a></li>
+				<li ng-class="{ active:page.isSelected('home.html')}"><a href ng-click="page.selectPage('home.html')" class="button">Home</a></li>
+				<li ng-class="{ active:page.isSelected('blog-single.html')}"><a href ng-click="page.selectPage('blog-single.html')" class="button">Blog</a></li>
 				<li><a href="#" class="button">Our Products</a>
 					<ul>
 						<li><a href="#" class="button">X-Plosion</a></li>
@@ -43,11 +43,13 @@
 			</ul>
 		</nav>
 	</header>
-	<div class="row">
-	<div class="large-8 columns" ng-controller="BlogController as blog">
-			{% block content %}{% endblock %}
-		</div>
+	<div class="row" ng-controller="BlogController as blog">
+		<section ng-include="page.currentPage" class="large-8 columns">
+			Stuff{% comment %}{% block content %}{% endblock %}{% endcomment %}
+		</section>
 		{% include "sidebar" %}
+	</div>
+	{% include "footer" %}
 
-	</body>
-	</html>
+</body>
+</html>

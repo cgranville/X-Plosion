@@ -6,30 +6,18 @@
     <div class="social"><img src="/assets/images/googleplus-color.png"/><p><a href="http://plus.google.com" target="_blank">Google+</a></p></div>
   </div>
 
-  <div id="recent" class="box" ng-controller="BlogController as blog">
+  <div id="recent" class="box">
     <header><h3>Randomly Selected</h3></header>
-    <p ng-repeat="post in blog.posts | limitTo : 5"><i class="fa fa-sign-out"></i> <a ng-click="blog.loadPost(5)">{%raw%}{{post.name}}{%endraw%}</a></p>
+    <p ng-repeat="post in blog.posts | limitTo : 5"><i class="fa fa-sign-out"></i> <a href ng-click="page.selectPage('blog-single.html'); blog.loadPost(post.id);">{%raw%}{{post.name}}{%endraw%}</a></p>
 
   </div>
 
   <div class="box">
     <header><h3>Where Can You Find Us?</h3></header>
-    <p><span style="font-weight:bold;">X-Plosion Ltd</span><br>
+    <p><span style="font-weight:bold;">X-Plosion Ltd.</span><br>
       9 Danbury Rd<br>
-      Wilton, CT 06897</p>
+      Wilton, CT 06897<br>
+      Page: {%raw%}{{page}}{%endraw%}<br>
+      Post: {%raw%}{{blog.currentPost}}{%endraw%}</p>
     </div>
   </section>
-</div>
-<section id="footer">
-  <div class="row">
-   <div id="footer-left" class="large-6 columns">&copy; 2014 X-Plosion Ltd.</div>
-   <div id="footer-right" class="large-6 columns">
-     <ul id="footer-menu">
-       <li><a href="#">FAQ</a></li>
-       <li><a href="#">Terms</a></li>
-       <li><a href="#">Privacy Policy</a></li>
-       <li><a href="#">Contact Us</a></li>
-     </ul>
-   </div>
- </div>
-</section>
