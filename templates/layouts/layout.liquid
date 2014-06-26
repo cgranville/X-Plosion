@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" ng-app="xplosion-site">
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +11,9 @@
 	{{ "/assets/css/flexslider.css" | asset_url | stylesheet_tag }}
 
 	<script src="{{ "modernizr.js" | asset_url }}"></script>
+	{% include "scripts" %}
+
+
 </head>
 <body>
 	<header>
@@ -26,7 +29,7 @@
 		<nav id="main-menu" class="row" role="navigation">
 			<ul>
 				<li><a href="#" class="button">Home</a></li>
-				<li><a href="blog" class="button">Blog</a></li>
+				<li><a href="blog-single" class="button">Blog</a></li>
 				<li><a href="#" class="button">Our Products</a>
 					<ul>
 						<li><a href="#" class="button">X-Plosion</a></li>
@@ -40,20 +43,11 @@
 			</ul>
 		</nav>
 	</header>
-	{% block content %}{% endblock %}
-	{% include "scripts" %}
-	<section id="footer">
-		<div class="row">
-			<div id="footer-left" class="large-6 columns">&copy; 2014 X-Plosion Ltd.</div>
-			<div id="footer-right" class="large-6 columns">
-			<ul id="footer-menu">
-					<li><a href="#">FAQ</a></li>
-					<li><a href="#">Terms</a></li>
-					<li><a href="#">Privacy Policy</a></li>
-					<li><a href="#">Contact Us</a></li>
-				</ul>
-			</div>
+	<div class="row">
+	<div class="large-8 columns" ng-controller="BlogController as blog">
+			{% block content %}{% endblock %}
 		</div>
-	</section>
-</body>
-</html>
+		{% include "sidebar" %}
+
+	</body>
+	</html>

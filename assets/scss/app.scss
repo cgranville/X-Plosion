@@ -719,6 +719,17 @@ border: none;
 	font-weight: bold;
 }
 
+#comment-preview .comment-content {
+	background: rgba(185,169,149,.5);
+}
+
+#comment-preview .comment-content:after {
+	border-right-color: rgba(185,169,149,.5);
+	//border-color: rgba(185,169,149,.5);
+}
+
+
+
 .arrow-box {
 	position: relative;
 	//display: inline;
@@ -770,6 +781,14 @@ border: none;
 	color: red;
 }
 
+.ng-invalid.ng-dirty {
+	border-color:red;
+
+}
+
+.ng-valid.ng-dirty {
+	border-color:green;
+}
 
 #footer {
 	background: #c9bba9;

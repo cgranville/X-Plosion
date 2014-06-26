@@ -1,6 +1,6 @@
 {% block content %} 
 <div class="row">
-  <div class="large-8 columns">
+  <div class="large-12 columns">
     <div class="row">
       <div id="slider" class="large-12 columns">
         <div class="flexslider">
@@ -26,19 +26,10 @@
     <div class="row box">
       <div class="large-6 columns">
         <header class="dark"><h3>X-Plosion Products</h3></header>
-        <div>
-          <h4>We say NO to artificial flavors</h4>
+        <div ng-repeat="post in blog.posts | filter:'Products'| orderBy:'-published' | limitTo : 2 ">
+          <h4>{%raw%}{{post.name}}{%endraw%}</h4>
           <div class="row">
-            <div class="large-6 columns excerpt"><img src="assets/images/xplosion-bottle-thumb.png"></div>
-            <div class="large-6 columns description"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-              <div class="more"><a href="#">More <i class="fa fa-sign-out"></i></a></div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h4>New flavors added</h4>
-          <div class="row">
-            <div class="large-6 columns excerpt"><img src="assets/images/flavor-bottle-thumb.png"></div>
+            <div class="large-6 columns excerpt"><img ng-src="{%raw%}{{post.thumb}}{%endraw%}"></div>
             <div class="large-6 columns description"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
               <div class="more"><a href="#">More <i class="fa fa-sign-out"></i></a></div>
             </div>
@@ -47,19 +38,10 @@
       </div>
       <div class="large-6 columns">
         <header class="dark"><h3>X-Plosion Expansion</h3></header>
-        <div>
-          <h4>X-Plosion is a hit in Japan</h4>
+        <div ng-repeat="post in blog.posts | filter:'Expansion' | orderBy:'-published' | limitTo : 2">
+          <h4>{%raw%}{{post.name}}{%endraw%}</h4>
           <div class="row">
-            <div class="large-6 columns excerpt"><img src="assets/images/japan-bottle-thumb.png"></div>
-            <div class="large-6 columns description"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-              <div class="more"><a href="#">More <i class="fa fa-sign-out"></i></a></div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h4>Danish elder hooked on X-Plosion</h4>
-          <div class="row">
-            <div class="large-6 columns excerpt"><img src="assets/images/danish-businessman-thumb.png"></div>
+            <div class="large-6 columns excerpt"><img ng-src="{%raw%}{{post.thumb}}{%endraw%}"></div>
             <div class="large-6 columns description"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
               <div class="more"><a href="#">More <i class="fa fa-sign-out"></i></a></div>
             </div>
@@ -68,30 +50,6 @@
       </div>
     </div>
   </div>
-  <section id="sidebar" class="large-4 columns">
-    <div class="box">
-      <header><h3>Follow Us</h3></header>
-      <div class="social"><img src="/assets/images/facebook-color.png"/><p><a href="http://www.facebook.com" target="_blank">Facebook</a></p></div>
-      <div class="social"><img src="/assets/images/twitter-color.png"/><p><a href="http://www.twitter.com" target="_blank">Twitter</a></p></div>
-      <div class="social"><img src="/assets/images/googleplus-color.png"/><p><a href="http://plus.google.com" target="_blank">Google+</a></p></div>
-    </div>
-
-    <div id="recent" class="box">
-      <header><h3>Randomly Selected</h3></header>
-      <p><i class="fa fa-sign-out"></i> <a href="#">X-Plosion is a hit in Japan</a></p>
-      <p><i class="fa fa-sign-out"></i> <a href="#">3 new flavors added</a></p>
-      <p><i class="fa fa-sign-out"></i> <a href="#">Check out our new promo at Youtube</a></p>
-      <p><i class="fa fa-sign-out"></i> <a href="#">We say NO to artificial flavors</a></p>
-      <p><i class="fa fa-sign-out"></i> <a href="#">X-Plosion and your health</a></p>
-
-    </div>
-
-    <div class="box">
-      <header><h3>Where Can You Find Us?</h3></header>
-      <p><span style="font-weight:bold;">X-Plosion Ltd</span><br>
-        9 Danbury Rd<br>
-        Wilton, CT 06897</p>
-      </div>
-    </section>
+  
   </div>
   {% endblock %}

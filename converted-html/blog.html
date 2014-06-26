@@ -1,0 +1,181 @@
+﻿<!doctype html>
+<html class="no-js" lang="en" ng-app="xplosion-site">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>X-PLOSION | Soda That Pops, Flavors That Explode</title>
+	<link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/assets/foundation-icons/foundation-icons.min.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<link href="/assets/css/flexslider.min.css" rel="stylesheet" type="text/css" media="all" />
+
+	<script src="/assets/js/vendor/modernizr.min.js"></script>
+	<script src="/assets/js/vendor/jquery.min.js"></script>
+<script src="/assets/js/jquery.flexslider.min.js"></script>
+<script src="/assets/js/foundation.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular.min.js"></script>
+<script src="/assets/js/app.min.js"></script>
+<script>
+$(document).foundation();
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  $(window).load(function() {
+    $('.flexslider').flexslider({
+    	useCSS: true,
+    	//selector: ".slides > li",
+    	controlNav: "thumbnails",
+    	slideshow: false,
+    	//directionNav: true,
+    	prevText: "",
+    	nextText: "",
+    	controlsContainer: "#sliderControls"
+    });
+  });
+</script>
+
+
+
+</head>
+<body>
+	<header>
+		<div id="header" class="row">
+			<div id="logo" class="large-4 columns"><img src="assets/images/xplosion-logo.png"></div>
+			<div id="banner" class="large-4 columns text-center"><img src="assets/images/banner.png"></div>
+			<div id="search" class="large-4 columns text-right">
+				<form class="inline">
+					<input type="search" class="radius" placeholder="Search X-Plosion..." /><a href="#" class="button tiny radius">Search</a>
+				</form>
+			</div>
+		</div>
+		<nav id="main-menu" class="row" role="navigation">
+			<ul>
+				<li><a href="#" class="button">Home</a></li>
+				<li><a href="blog" class="button">Blog</a></li>
+				<li><a href="#" class="button">Our Products</a>
+					<ul>
+						<li><a href="#" class="button">X-Plosion</a></li>
+						<li><a href="#" class="button">Flavors</a></li>
+						<li><a href="#" class="button">Merchandise</a></li>
+					</ul>
+				</li>
+				<li><a href="#" class="button">About Us</a></li>
+				<li><a href="#" class="button">Where To Buy</a></li>
+				<li><a href="#" class="button">Contact Us</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="row">
+		<div class="large-8 columns">
+			 
+    <div class="row box" ng-controller="BlogController as blog">
+      <article class="large-12 columns">
+        <header class="dark"><h2>{{blog.posts[0].name}}</h2>
+          <div class="meta">Sept 12 2011, by <a href="#">{{blog.posts[0].author}}</a> | <a href="#">{{blog.posts[0].category}}</a></div>
+        }
+        </header>
+        <div class="featured"><img src="assets/images/blog-feat-img.jpg"></div>
+        <div class="content">
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+          <h4>We've opened office in Japan!</h4>
+          <div id="article-map">
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.5026545376304!2d139.6918553!3d35.68924629999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cd498f171e1%3A0xed9e1b322159a20f!2sThe+Tokyo+City+Hall!5e0!3m2!1sen!2sus!4v1403453251529" width="280" height="250" frameborder="0" style="border:0"></iframe>
+          </div>
+          <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></div>
+        </article>
+      </div>
+      <div class="row">
+        <div id="comments" class="large-12 columns">
+          <div class="comment-header">Comments</div>
+          <ul>
+            <li class="comment">
+              <div class="comment-user-pic"><img src="assets/images/user-fumihiro.jpg"></div>
+              <div class="comment-content arrow-box">
+                <p>Posted on 11 Sept, 2011 by <a href="#">Fumihiro</a></p>
+                <p>Welcome to Japan, X-Plosion!</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="add-comment" class="row">
+        <div class="large-12 columns">
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="comment-header">Add Comment</div>
+            </div>
+          </div>
+          <div id="name" class="row">
+            <div class="large-2 columns">
+              <label for="name" class="left inline required">Your Name</label>
+            </div>
+            <div class="large-10 columns">
+              <input class="radius" type="text" id="name">
+            </div>
+          </div>
+          <div id="email" class="row">
+            <div class="large-2 columns">
+              <label for="email" class="left inline required">Your Email</label>
+            </div>
+            <div class="large-10 columns">
+              <input class="radius" type="email" id="email">
+            </div>
+          </div>
+          <div id="comment" class="row">
+            <div class="large-2 columns">
+              <label for="comment" class="left inline required">Comment</label>
+            </div>
+            <div class="large-10 columns">
+              <textarea class="radius" type="text" id="comment"></textarea>
+            </div>
+          </div>
+          <div id="form-button" class="row">
+            <div class="large-2 columns">
+            </div>
+            <div class="large-10 columns">
+              <a href="#" class="button tiny radius">Add Comment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+		</div>
+		<section id="sidebar" class="large-4 columns">
+  <div class="box">
+    <header><h3>Follow Us</h3></header>
+    <div class="social"><img src="/assets/images/facebook-color.png"/><p><a href="http://www.facebook.com" target="_blank">Facebook</a></p></div>
+    <div class="social"><img src="/assets/images/twitter-color.png"/><p><a href="http://www.twitter.com" target="_blank">Twitter</a></p></div>
+    <div class="social"><img src="/assets/images/googleplus-color.png"/><p><a href="http://plus.google.com" target="_blank">Google+</a></p></div>
+  </div>
+
+  <div id="recent" class="box" ng-controller="BlogController as blog">
+    <header><h3>Randomly Selected</h3></header>
+    <p ng-repeat="post in blog.posts"><i class="fa fa-sign-out"></i> <a href="#">{{post.name}}</a></p>
+
+  </div>
+
+  <div class="box">
+    <header><h3>Where Can You Find Us?</h3></header>
+    <p><span style="font-weight:bold;">X-Plosion Ltd</span><br>
+      9 Danbury Rd<br>
+      Wilton, CT 06897</p>
+    </div>
+  </section>
+</div>
+<section id="footer">
+  <div class="row">
+   <div id="footer-left" class="large-6 columns">&copy; 2014 X-Plosion Ltd.</div>
+   <div id="footer-right" class="large-6 columns">
+     <ul id="footer-menu">
+       <li><a href="#">FAQ</a></li>
+       <li><a href="#">Terms</a></li>
+       <li><a href="#">Privacy Policy</a></li>
+       <li><a href="#">Contact Us</a></li>
+     </ul>
+   </div>
+ </div>
+</section>
+		
+	</body>
+	</html>
