@@ -1,10 +1,11 @@
 <script src="assets/js/angular.js"></script>
-{{ "jquery.js" | asset_url | script_tag }}
+{% comment %}{{ "jquery.js" | asset_url | script_tag }}{% endcomment %}
+<script src="assets/js/vendor/jquery.js"></script>
 {{ "jquery.flexslider.js" | asset_url | script_tag }}
 {{ "foundation.js" | asset_url | script_tag }}
 {% comment %}{{ "angular.js" | asset_url | script_tag}}{% endcomment %}
 <!--[if lte IE 7]>
-        <script src="/assets/js/json3.js"></script>
+        <script src="/assets/js/json3.min.js"></script>
       <![endif]-->
 {{ "app.js" | asset_url | script_tag }}
 <script>

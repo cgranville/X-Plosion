@@ -1,6 +1,8 @@
 (function() {
 	var app = angular.module('xplosion-site',[]);
 
+
+
 	app.controller('SliderController', function(){
 
 		$('.flexslider').flexslider({
@@ -17,17 +19,10 @@
 
 	});
 
-	app.controller('PageController', function(){
-		this.currentPage = 'home.html';
-		
-		this.selectPage = function(setPage) {
-			this.currentPage = setPage;
-		};
-
-		this.isSelected = function(checkPage){
-			return this.currentPage === checkPage;
-		}
-	});
+	app.controller('PageController', ['$routeParams', function($routeParams) {
+    this.name = "PageController";
+    this.params = $routeParams;
+  }]);
 
 	app.controller('BlogController', function(){
 		this.currentPage = 'home.html';
@@ -36,6 +31,7 @@
 		this.loadPost = function(postId, page){
 			this.currentPost = postId;
 			this.currentPage = page;
+			event.stopPropagation();
 		};
 		this.selectPage = function(setPage) {
 			this.currentPage = setPage;

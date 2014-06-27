@@ -36,18 +36,18 @@
 <body data-ng-controller="BlogController as blog">
 	<header>
 		<div id="header" class="row">
-			<div id="logo" class="large-4 columns"><img src="assets/images/xplosion-logo.png" alt="logo"></div>
-			<div id="banner" class="large-4 columns text-center"><img src="assets/images/banner.png" alt="banner"></div>
-			<div id="search" class="large-4 columns text-right">
+			<div id="logo" class="small-4 columns"><img src="assets/images/xplosion-logo.png" alt="logo"></div>
+			<div id="banner" class="small-4 columns text-center"><img src="assets/images/banner.png" alt="banner"></div>
+			<div id="search" class="small-4 columns text-right">
 				<form class="inline">
-					<input type="search" class="radius" placeholder="Search X-Plosion..." value="Search X-Plosion..."><a href="#" class="button tiny radius">Search</a>
+					<input type="search" class="radius" placeholder="Search X-Plosion..." ><a href="#" class="button tiny radius">Search</a>
 				</form>
 			</div>
 		</div>
 		<nav id="main-menu" class="row" role="navigation">
 			<ul>
 				<li data-ng-class="{ active:page.isSelected('home.html')}"><a data-ng-click="blog.selectPage('home.html')" class="button">Home</a></li>
-				<li data-ng-class="{ active:page.isSelected('blog.html')}"><a data-ng-click="blog.selectPage('blog.html')" class="button">Blog</a></li>
+				<li data-ng-class="{ active:page.isSelected('blog.html')}"><a data-ng-click="blog.selectPage('blog')" class="button">Blog</a></li>
 				<li><a href="#" class="button">Our Products</a>
 					<ul>
 						<li><a href="#" class="button">X-Plosion</a></li>
@@ -62,11 +62,12 @@
 		</nav>
 	</header>
 	<div class="row">
-		<section data-ng-include="blog.currentPage" class="large-8 columns">
-			Stuff{% comment %}{% block content %}{% endblock %}{% endcomment %}
+		<section data-ng-include="blog.currentPage " class="small-8 columns">
+			{% comment %}{% block content %}{% endblock %}{% endcomment %}
 		</section>
 		{% include "sidebar" %}
 	</div>
 	{% include "footer" %}
+	<script src="assets/js/rem.js" type="text/javascript"></script>
 </body>
 </html>

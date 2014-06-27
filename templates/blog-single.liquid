@@ -2,7 +2,7 @@
 
 
     <div class="row box">
-      <article class="large-12 columns">
+      <article class="small-12 columns">
         <header class="dark"><h2>{%raw%}{{blog.posts[0].name}}{%endraw%}</h2>
           <div class="meta">{%raw%}{{blog.posts[0].published | date:'MMM d yyyy'}}{%endraw%}, by <a href="#">{%raw%}{{blog.posts[0].author}}{%endraw%}</a> | <a href="#">{%raw%}{{blog.posts[0].category}}{%endraw%}</a></div>
         
@@ -19,7 +19,7 @@
 
       </div>
       <div class="row">
-        <div id="comments" class="large-12 columns">
+        <div id="comments" class="small-12 columns">
 
           <div class="comment-header">Comments</div>
           <ul>
@@ -35,9 +35,9 @@
       </div>
        <form name="commentForm" ng-controller="CommentController as commentCtrl" ng-submit="commentForm.$valid && commentCtrl.addComment(comment)" novalidate>
       <div id="add-comment" class="row">
-        <div class="large-12 columns">
+        <div class="small-12 columns">
         <div class="row">
-          <div id="comment-preview" class="large-12 columns">
+          <div id="comment-preview" class="small-12 columns">
             <div class="comment-user-pic"><img src="assets/images/user-blank.jpg"></div>
               <div class="comment-content arrow-box">
                 <p><span ng-show="commentCtrl.comment.date.length">Posted on {%raw%}{{commentCtrl.comment.date | date:'d MMM, yyyy'}}{%endraw%} </span><span ng-show="commentCtrl.comment.name.length">by <a href="#">{%raw%}{{commentCtrl.comment.name}}{%endraw%}</a></span></p>
@@ -46,42 +46,42 @@
           </div>
         </div>
           <div class="row">
-            <div class="large-12 columns">
+            <div class="small-12 columns">
               <div class="comment-header">Add Comment</div>
             </div>
           </div>
           <div id="name" class="row">
-            <div class="large-2 columns">
+            <div class="small-2 columns">
               <label for="name" class="left inline required">Your Name</label>
             </div>
-            <div class="large-10 columns">
+            <div class="small-10 columns">
               <input ng-model="commentCtrl.comment.name" class="radius" type="text" id="name" required>
             </div>
           </div>
 
           <div id="email" class="row">
-            <div class="large-2 columns">
+            <div class="small-2 columns">
               <label for="email" class="left inline required">Your Email</label>
             </div>
-            <div class="large-10 columns">
+            <div class="small-10 columns">
               <input ng-model="commentCtrl.comment.email" class="radius" type="email" id="email" required>
             </div>
           </div>
 
           <div id="comment" class="row">
-            <div class="large-2 columns">
+            <div class="small-2 columns">
               <label for="comment" class="left inline required">Comment</label>
             </div>
-            <div class="large-10 columns">
+            <div class="small-10 columns">
               <textarea ng-model="commentCtrl.comment.comment" class="radius" type="text" id="comment" required></textarea>
             </div>
           </div>
 
           <div id="form-button" class="row">
-            <div class="large-2 columns">
+            <div class="small-2 columns">
               
             </div>
-            <div class="large-10 columns">
+            <div class="small-10 columns">
               <input type="submit" class="button tiny radius" value="Add Comment"/>
             </div>
           </div>
