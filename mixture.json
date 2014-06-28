@@ -14,7 +14,7 @@
     "templateDirectory": "templates",
     "templateDefaultLayout": "layout",
     "templateDefaultPage": "index",
-    "type": "mixture",
+    "type": "simple",
     "useCompass": false,
     "simpleModePartnerServer": null,
     "simpleModeFileTypes": null,

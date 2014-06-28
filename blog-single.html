@@ -1,10 +1,10 @@
-    <div class="row box">
-      <article class="large-12 columns">
-        <header class="dark"><h2>{{blog.posts[blog.currentPost].name}}</h2>
-          <div class="meta">{{blog.posts[blog.currentPost].published | date:'MMM d yyyy'}}, by <a href="#">{{blog.posts[blog.currentPost].author}}</a> | <a href="#">{{blog.posts[blog.currentPost].category}}</a></div>
+﻿    <div class="row box">
+      <article class="small-12 columns">
+        <header class="dark"><h2>{{postId}}{{blog[currentPostId].name}}</h2>
+          <div class="meta">{{blog[currentPostId].published | date:'MMM d yyyy'}}, by <a href="#">{{blog[currentPostId].author}}</a> | <a href="#">{{blog[currentPostId].category}}</a></div>
         
         </header>
-        <div class="featured"><img data-ng-src="{{blog.posts[blog.currentPost].featured}}" alt="featured image"></div>
+        <div class="featured"><img data-ng-src="{{blog[currentPostId].featured}}" alt="featured image"></div>
         <div class="content">
           <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
           <h4>We've opened office in Japan!</h4>
@@ -16,11 +16,11 @@
 
       </div>
       <div class="row">
-        <div id="comments" class="large-12 columns">
+        <div id="comments" class="small-12 columns">
 
           <div class="comment-header">Comments</div>
           <ul>
-            <li class="comment" data-ng-repeat="comment in blog.posts[blog.currentPost].comments">
+            <li class="comment" data-ng-repeat="comment in blog[currentPostId].comments">
               <div class="comment-user-pic"><img data-ng-src="{{comment.thumb}}" alt="user"></div>
               <div class="comment-content arrow-box">
                 <p>Posted on {{comment.date | date:'d MMM, yyyy'}} by <a href="#">{{comment.name}}</a></p>
@@ -30,55 +30,55 @@
           </ul>
         </div>
       </div>
-       <form name="commentForm" data-ng-controller="CommentController as commentCtrl" data-ng-submit="commentForm.$valid && commentCtrl.addComment(comment, blog.currentPost)" novalidate>
+       <form name="commentForm" data-ng-controller="CommentController" data-ng-submit="commentForm.$valid && addComment(comment, currentPostId)" novalidate>
       <div id="add-comment" class="row">
-        <div class="large-12 columns">
+        <div class="small-12 columns">
         <div class="row">
-          <div id="comment-preview" class="large-12 columns">
+          <div id="comment-preview" class="small-12 columns">
             <div class="comment-user-pic"><img src="assets/images/user-blank.jpg" alt="user"></div>
               <div class="comment-content arrow-box">
-                <p><span data-ng-show="commentCtrl.comment.date.length">Posted on {{commentCtrl.comment.date | date:'d MMM, yyyy'}} </span><span data-ng-show="commentCtrl.comment.name.length">by <a href="#">{{commentCtrl.comment.name}}</a></span></p>
-                <p>{{commentCtrl.comment.comment}}</p>
+                <p><span data-ng-show="comment.date.length">Posted on {{comment.date | date:'d MMM, yyyy'}} </span><span data-ng-show="comment.name.length">by <a href="#">{{comment.name}}</a></span></p>
+                <p>{{comment.comment}}</p>
               </div>
           </div>
         </div>
           <div class="row">
-            <div class="large-12 columns">
+            <div class="small-12 columns">
               <div class="comment-header">Add Comment</div>
             </div>
           </div>
           <div id="name" class="row">
-            <div class="large-2 columns">
+            <div class="small-2 columns">
               <label for="name" class="left inline required">Your Name</label>
             </div>
-            <div class="large-10 columns">
-              <input data-ng-model="commentCtrl.comment.name" class="radius" type="text" id="name" required/>
+            <div class="small-10 columns">
+              <input data-ng-model="comment.name" class="radius" type="text" id="name" required/>
             </div>
           </div>
 
           <div id="email" class="row">
-            <div class="large-2 columns">
+            <div class="small-2 columns">
               <label for="email" class="left inline required">Your Email</label>
             </div>
-            <div class="large-10 columns">
-              <input data-ng-model="commentCtrl.comment.email" class="radius" type="email" id="email" required/>
+            <div class="small-10 columns">
+              <input data-ng-model="comment.email" class="radius" type="email" id="email" required/>
             </div>
           </div>
 
           <div id="comment" class="row">
-            <div class="large-2 columns">
+            <div class="small-2 columns">
               <label for="comment" class="left inline required">Comment</label>
             </div>
-            <div class="large-10 columns">
-              <textarea data-ng-model="commentCtrl.comment.comment" class="radius" type="text" id="comment" required></textarea>
+            <div class="small-10 columns">
+              <textarea data-ng-model="comment.comment" class="radius" type="text" id="comment" required></textarea>
             </div>
           </div>
 
           <div id="form-button" class="row">
-            <div class="large-2 columns">
+            <div class="small-2 columns">
               
             </div>
-            <div class="large-10 columns">
+            <div class="small-10 columns">
               <input type="submit" class="button tiny radius" value="Add Comment"/>
             </div>
           </div>

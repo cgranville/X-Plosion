@@ -24,45 +24,45 @@
   <title>X-PLOSION | Soda That Pops, Flavors That Explode</title>
   <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" media="all" />
   <link href="assets/foundation-icons/foundation-icons.min.css" rel="stylesheet" type="text/css" media="all" />
-  
+
   <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
   <link href="assets/css/flexslider.min.css" rel="stylesheet" type="text/css" media="all" />
 
   <script src="assets/js/vendor/modernizr.min.js"></script>
-  <script src="assets/js/angular.js"></script>
-  <script src="assets/js/vendor/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+
+  <script src="assets/js/vendor/jquery.js"></script>
   <script src="assets/js/jquery.flexslider.min.js"></script>
+  <script src="assets/js/jquery.placeholder.min.js"></script>
   <script src="assets/js/foundation.min.js"></script>
 
 <!--[if lte IE 7]>
-        <script src="assets/js/json3.js"></script>
+        <script src="assets/js/json3.min.js"></script>
         <![endif]-->
-        <script src="assets/js/app.min.js"></script>
+        <script src="assets/js/app.js"></script>
         <script>
         	$(document).foundation();
         </script>
 
 
 
-
-
     </head>
-    <body data-ng-controller="BlogController as blog">
+    <body data-ng-controller="MainController">
     	<header>
     		<div id="header" class="row">
     			<div id="logo" class="small-4 columns"><img src="assets/images/xplosion-logo.png" alt="logo"></div>
     			<div id="banner" class="small-4 columns text-center"><img src="assets/images/banner.png" alt="banner"></div>
     			<div id="search" class="small-4 columns text-right">
     				<form class="inline">
-    					<input type="search" class="radius" placeholder="Search X-Plosion..." value="Search X-Plosion..."><a href="#" class="button tiny radius">Search</a>
+    					<input type="search" ng-model="query" class="radius" placeholder="Search X-Plosion..." ><a href="#" class="button tiny radius">Search</a>
     				</form>
     			</div>
     		</div>
     		<nav id="main-menu" class="row" role="navigation">
     			<ul>
-    				<li data-ng-class="{ active:page.isSelected('home.html')}"><a data-ng-click="blog.selectPage('home.html')" class="button">Home</a></li>
-    				<li data-ng-class="{ active:page.isSelected('blog.html')}"><a data-ng-click="blog.selectPage('blog.html')" class="button">Blog</a></li>
-    				<li><a href="#" class="button">Our Products</a>
+    				<li data-ng-class="{ active:page.isSelected('home.html')}"><a data-ng-href="/" class="button">Home</a></li>
+    				<li data-ng-class="{ active:page.isSelected('blog.html')}"><a data-ng-href="#/blog" class="button">Blog</a></li>
+    				<li><a data-ng-href="#our-products" class="button">Our Products</a>
     					<ul>
     						<li><a href="#" class="button">X-Plosion</a></li>
     						<li><a href="#" class="button">Flavors</a></li>
@@ -76,9 +76,8 @@
     		</nav>
     	</header>
     	<div class="row">
-    		<section data-ng-include="blog.currentPage" class="small-8 columns">
-    			Stuff
-    		</section>
+    		<section ng-view class="small-8 columns"></section>
+    		<!-- <section data-ng-include="blog.currentPage " class="small-8 columns"></section> -->
     		<section id="sidebar" class="small-4 columns">
     			<div class="box">
     				<header><h3>Follow Us</h3></header>
@@ -89,7 +88,7 @@
 
     			<div id="recent" class="box">
     				<header><h3>Randomly Selected</h3></header>
-    				<p data-ng-repeat="post in blog.posts | limitTo : 5"><i class="fa fa-sign-out"></i> <a data-ng-click="blog.loadPost(post.id, 'blog.html');">{{post.name}}</a></p>
+    				<p data-ng-repeat="post in blog | limitTo : 5"><i class="fa fa-sign-out"></i> <a data-ng-href="#/blog/{{post.id}}">{{post.name}}</a></p>
 
     			</div>
 
@@ -98,24 +97,24 @@
     				<p><span style="font-weight:bold;">X-Plosion Ltd.</span><br>
     					9 Danbury Rd<br>
     					Wilton, CT 06897<br>
-    					Page: {{page}}<br>
-    					Post: {{blog.currentPost}}</p>
-    				</div>
-    			</section>
-
-    		</div>
-    		<footer id="footer">
-    			<div class="row">
-    				<div id="footer-left" class="small-6 columns">&copy; 2014 X-Plosion Ltd.</div>
-    				<div id="footer-right" class="small-6 columns">
-    					<ul id="footer-menu">
-    						<li><a href="#">FAQ</a></li>
-    						<li><a href="#">Terms</a></li>
-    						<li><a href="#">Privacy Policy</a></li>
-    						<li><a href="#">Contact Us</a></li>
-    					</ul>
-    				</div>
+    				</p>
     			</div>
-    		</footer>
-    	</body>
-    	</html>
+    		</section>
+
+    	</div>
+    	<footer id="footer">
+    		<div class="row">
+    			<div id="footer-left" class="small-6 columns">&copy; 2014 X-Plosion Ltd.</div>
+    			<div id="footer-right" class="small-6 columns">
+    				<ul id="footer-menu">
+    					<li><a href="#">FAQ</a></li>
+    					<li><a href="#">Terms</a></li>
+    					<li><a href="#">Privacy Policy</a></li>
+    					<li><a href="#">Contact Us</a></li>
+    				</ul>
+    			</div>
+    		</div>
+    	</footer>
+    	<script src="assets/js/rem.js" type="text/javascript"></script>
+    </body>
+    </html>

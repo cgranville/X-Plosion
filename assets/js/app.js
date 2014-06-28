@@ -1,9 +1,38 @@
 (function() {
-	var app = angular.module('xplosion-site',[]);
+	var app = angular.module('xplosion-site',[ ]);
 
+	app.config(['$routeProvider', function($routeProvider, $locationProvider) {
+			$routeProvider.
+			when('/', {
+				templateUrl: 'home.html',
+				controller: 'HomePageController'
+			}).
+			when('/blog', {
+				templateUrl: 'blog.html',
+				controller: 'BlogPageController'
+			}).
+			when('/blog/:postId', {
+				templateUrl: 'blog-single.html',
+				controller: 'BlogPageController'
+			}).
+			otherwise({
+				redirectTo: '/'
+			});
+		}]);
 
+	app.controller('MainController', function($scope) {
 
-	app.controller('SliderController', function(){
+		$scope.message = 'This is the home page';
+		$scope.blog = articles;
+
+		$('input, textarea').placeholder();
+
+	});
+
+	app.controller('HomePageController', function($scope) {
+
+		$scope.message = 'This is the Home Page';
+		$scope.blog = articles;
 
 		$('.flexslider').flexslider({
 			useCSS: true,
@@ -16,31 +45,29 @@
 	    	controlsContainer: "#sliderControls"
 	    });
 
-
-	});
-
-	app.controller('PageController', ['$routeParams', function($routeParams) {
-    this.name = "PageController";
-    this.params = $routeParams;
-  }]);
-
-	app.controller('BlogController', function(){
-		this.currentPage = 'home.html';
-		this.currentPost = 0;
+	    //this.currentPost = 0;
 		this.posts = articles;		
-		this.loadPost = function(postId, page){
+		this.loadPost = function(postId){
 			this.currentPost = postId;
-			this.currentPage = page;
-			event.stopPropagation();
-		};
-		this.selectPage = function(setPage) {
-			this.currentPage = setPage;
 		};
 
 	});
 
-	app.controller('CommentController', function(){
-		this.comment = {
+	app.controller('BlogPageController', function($scope, $routeParams) {
+		$scope.currentPostId = $routeParams.postId;
+		$scope.message = 'This is the Blog Page';
+		$scope.blog = articles;
+		$scope.posts = articles;		
+	
+	});
+
+	app.controller('BlogController', function($scope){
+		
+
+	});
+
+	app.controller('CommentController', function($scope){
+		$scope.comment = {
 			name:'',
 			email:'',
 			thumb:'assets/images/user-blank.jpg',
@@ -48,11 +75,11 @@
 			comment: ''
 		};
 
-		this.addComment = function(comment, commentId){
-			this.comment.date = Date.now();
-			//console.log(this);
-			articles[commentId].comments.push(this.comment);
-			this.comment = {
+		$scope.addComment = function(comment,commentId){
+			$scope.comment.date = Date.now();
+			console.log("Comment sent");
+			articles[commentId].comments.push($scope.comment);
+			$scope.comment = {
 				name:'',
 				email:'',
 				thumb:'assets/images/user-blank.jpg',

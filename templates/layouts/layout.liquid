@@ -47,8 +47,8 @@
 		<nav id="main-menu" class="row" role="navigation">
 			<ul>
 				<li data-ng-class="{ active:page.isSelected('home.html')}"><a data-ng-click="blog.selectPage('home.html')" class="button">Home</a></li>
-				<li data-ng-class="{ active:page.isSelected('blog.html')}"><a data-ng-click="blog.selectPage('blog')" class="button">Blog</a></li>
-				<li><a href="#" class="button">Our Products</a>
+				<li data-ng-class="{ active:page.isSelected('blog.html')}"><a data-ng-click="blog.selectPage('blog.html')" class="button">Blog</a></li>
+				<li><a href="/" class="button">Our Products</a>
 					<ul>
 						<li><a href="#" class="button">X-Plosion</a></li>
 						<li><a href="#" class="button">Flavors</a></li>
@@ -61,9 +61,9 @@
 			</ul>
 		</nav>
 	</header>
-	<div class="row">
-		<section data-ng-include="blog.currentPage " class="small-8 columns">
-			{% comment %}{% block content %}{% endblock %}{% endcomment %}
+	<div class="row" ng-controller="MainCtrl as main">
+		<section ng-view class="small-8 columns">
+			{% comment %}<section data-ng-include="blog.currentPage " class="small-8 columns">{% endcomment %}
 		</section>
 		{% include "sidebar" %}
 	</div>

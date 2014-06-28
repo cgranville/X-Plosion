@@ -1,5 +1,30 @@
 (function() {
-	var app = angular.module('xplosion-site',[]);
+	var app = angular.module('xplosion-site',['ngRoute']);
+
+	app.config(['$routeProvider', '$locationProvider',
+    function($routeProvider, $locationProvider) {
+      $routeProvider
+        .when('/home', {
+          templateUrl: 'index.html',
+          controller: 'PageCtrl',
+          controllerAs: 'page'
+        });
+
+      // configure html5 to get links working on jsfiddle
+      $locationProvider.html5Mode(true);
+  }]);
+
+	app.controller('MainCtrl', ['$route', '$routeParams', '$location',
+    function($route, $routeParams, $location) {
+      this.$route = $route;
+      this.$location = $location;
+      this.$routeParams = $routeParams;
+  }]);
+
+	app.controller('PageCtrl', ['$routeParams', function($routeParams) {
+    this.name = "PageCtrl";
+    this.params = $routeParams;
+  }])
 
 	app.controller('SliderController', function(){
 
@@ -17,17 +42,10 @@
 
 	});
 
-	app.controller('PageController', function(){
-		this.currentPage = 'home.html';
-		
-		this.selectPage = function(setPage) {
-			this.currentPage = setPage;
-		};
-
-		this.isSelected = function(checkPage){
-			return this.currentPage === checkPage;
-		}
-	});
+	app.controller('PageController', ['$routeParams', function($routeParams) {
+    this.name = "PageController";
+    this.params = $routeParams;
+  }]);
 
 	app.controller('BlogController', function(){
 		this.currentPage = 'home.html';
@@ -36,6 +54,7 @@
 		this.loadPost = function(postId, page){
 			this.currentPost = postId;
 			this.currentPage = page;
+			event.stopPropagation();
 		};
 		this.selectPage = function(setPage) {
 			this.currentPage = setPage;

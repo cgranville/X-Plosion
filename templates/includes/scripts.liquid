@@ -2,6 +2,7 @@
 {% comment %}{{ "jquery.js" | asset_url | script_tag }}{% endcomment %}
 <script src="assets/js/vendor/jquery.js"></script>
 {{ "jquery.flexslider.js" | asset_url | script_tag }}
+{{ "jquery.placeholder.js" | asset_url | script_tag }}
 {{ "foundation.js" | asset_url | script_tag }}
 {% comment %}{{ "angular.js" | asset_url | script_tag}}{% endcomment %}
 <!--[if lte IE 7]>
@@ -11,5 +12,7 @@
 <script>
 $(document).foundation();
 </script>
-
+<script>
+$('input, textarea').placeholder();
+</script>
 
