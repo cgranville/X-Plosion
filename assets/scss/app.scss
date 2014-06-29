@@ -427,7 +427,14 @@ article p {
 }
 
 .featured {
-	padding:20px 20px 0 20px;
+	margin:20px 20px 0 20px;
+	border:1px #eae2d7 solid !important;
+	border-collapse: separate;
+}
+
+.featured img {
+	border: 3px white solid;
+	border-collapse: separate;
 }
 
 .map {
