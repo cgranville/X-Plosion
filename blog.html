@@ -1,4 +1,6 @@
-    <div class="row box list" data-ng-repeat="post in blog | filter:query">
+    <div ng-show="blog.length && query.length"><p>Search results for "{{query}}"</p></div>
+    <div ng-hide="blog.length"><p>No results for "{{query}}"</p></div>
+    <div class="row box list" data-ng-repeat="post in blog = (posts | filter:query)">
       <article class="small-12 columns">
         <header class="dark list"><h2><a data-ng-href="#/blog/{{post.id}}">{{post.name}}</a></h2>
           <div class="meta">{{post.published | date:'MMM d yyyy'}}, by <a href="#">{{post.author}}</a> | <a href="#">{{post.category}}</a></div>
@@ -9,6 +11,8 @@
         </article>
 
       </div>
+      
+
       
        
 

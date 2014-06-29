@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module('xplosion-site',[]);
+	var app = angular.module('xplosion-site',['ngRoute']);
 
 	app.config(['$routeProvider', function($routeProvider, $locationProvider) {
 		$routeProvider.
@@ -25,7 +25,14 @@
 		$scope.message = 'This is the home page';
 		$scope.blog = articles;
 
-		$('input, textarea').placeholder();
+		$('#mainSearch').placeholder();
+
+		 $('#mainSearch').keypress(function( event ){
+	    	if ( event.which == 13 ) {
+	    		console.log("Search");
+	    		$('#mainSearchBtn').click();
+	    	}
+	    });
 
 	});
 
@@ -44,6 +51,8 @@
 	    	nextText: "",
 	    	controlsContainer: "#sliderControls"
 	    });
+
+	   
 
 	    //this.currentPost = 0;
 	    this.posts = articles;		

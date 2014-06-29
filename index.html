@@ -31,9 +31,11 @@
   <script src="assets/js/vendor/modernizr.min.js"></script>
   
   
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+
   <script src="assets/js/vendor/jquery.js"></script>
-  
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>
+<script src="https://code.angularjs.org/1.2.18/angular-route.min.js"></script>
  <script src="assets/js/app.js"></script>
   <script src="assets/js/jquery.flexslider.min.js"></script>
   <script src="assets/js/jquery.placeholder.min.js"></script>
@@ -57,7 +59,7 @@
     			<div id="banner" class="small-4 columns text-center"><img src="assets/images/banner.png" alt="banner"></div>
     			<div id="search" class="small-4 columns text-right">
     				<form class="inline">
-    					<input type="search" ng-model="query" class="radius" placeholder="Search X-Plosion..." novalidate><a href="#" class="button tiny radius">Search</a>
+    					<input id="mainSearch" type="search" data-ng-model="query" class="radius" placeholder="Search X-Plosion..." novalidate><a id="mainSearchBtn" href="#/blog" class="button tiny radius">Search</a>
     				</form>
     			</div>
     		</div>
@@ -79,7 +81,7 @@
     		</nav>
     	</header>
     	<div class="row">
-    		<section ng-view class="small-8 columns"></section>
+    		<section data-ng-view class="small-8 columns"></section>
     		<!-- <section data-ng-include="blog.currentPage " class="small-8 columns"></section> -->
     		<section id="sidebar" class="small-4 columns">
     			<div class="box">
