@@ -3,7 +3,7 @@
     <div class="row box list" data-ng-repeat="post in blog = (posts | filter:query)">
       <article class="small-12 columns">
         <header class="dark list"><h2><a data-ng-href="#/blog/{{post.id}}">{{post.name}}</a></h2>
-          <div class="meta">{{post.published | date:'MMM d yyyy'}}, by <a href="#">{{post.author}}</a> | <a href="#">{{post.category}}</a></div>
+          <div class="meta">{{post.published | date:'MMM d yyyy'}}, by <a data-ng-click="searchThis(post.author);">{{post.author}}</a> | <a data-ng-click="searchThis(post.category);">{{post.category}}</a></div>
         
         </header>
         
