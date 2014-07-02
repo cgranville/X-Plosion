@@ -17,7 +17,7 @@
             <li class="comment" data-ng-repeat="comment in blog[currentPostId].comments">
               <div class="comment-user-pic"><img data-ng-src="{{comment.thumb}}" alt="user"></div>
               <div class="comment-content arrow-box">
-                <p>Posted on {{comment.date | date:'d MMM, yyyy'}} by <a href="#">{{comment.name}}</a></p>
+                <p>Posted on {{comment.date | date:'d MMM, yyyy'}} by <a data-ng-click="searchThis(comment.name);">{{comment.name}}</a></p>
                 <p>{{comment.comment}}</p>
               </div>
             </li>

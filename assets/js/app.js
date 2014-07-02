@@ -27,12 +27,17 @@
 
 		$('#mainSearch').placeholder();
 
-		 $('#mainSearch').keypress(function( event ){
-	    	if ( event.which == 13 ) {
+		$('#mainSearch').keypress(function( event ){
+			if ( event.which == 13 ) {
 	    		//console.log("Search");
 	    		$('#mainSearchBtn').click();
 	    	}
 	    });
+
+	    $('a').click(function(){
+			$('html, body').animate({scrollTop : 0},300);
+		//return false;
+	});
 
 	});
 
@@ -52,7 +57,7 @@
 	    	controlsContainer: "#sliderControls"
 	    });
 
-	    
+
 
 	    //this.currentPost = 0;
 	    this.posts = articles;		
